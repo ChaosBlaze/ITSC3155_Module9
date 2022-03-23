@@ -88,9 +88,20 @@ VALUES
     (5, 6)
 ; 
 
-
-SELECT course_code, first_name, last_name, SUM(num_credits) AS noOfCreditHours
+/*
+searches for course_code, first_name, last_name, and adds up all the num_credits for all of their classes for total number of credits
+*/
+SELECT course_code, first_name, last_name, SUM(num_credits) AS totalCreditHours
+/*
+Initializes the variables C S and I from
+*/
 FROM course C, student_schedule S, instructor I
+/*
+instructors and class schedule of student with an ID of 1
+*/
 WHERE C.course_id = S.course_id AND C.instructor_id = I.instructor_id AND student_id = 1
+/*
+organized in that order
+*/
 GROUP BY course_code, first_name, last_name;
 

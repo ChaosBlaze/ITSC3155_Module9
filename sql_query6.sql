@@ -92,4 +92,7 @@ VALUES
 
 SELECT course_code, course_name
 FROM course
+/*
+any course code that contains a space and a 3
+*/
 WHERE course_code LIKE '% 3%';
